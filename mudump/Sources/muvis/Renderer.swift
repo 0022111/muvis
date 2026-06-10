@@ -42,7 +42,7 @@ struct MetalVisualView: NSViewRepresentable {
 // MARK: - Renderer
 
 @MainActor
-final class Renderer: NSObject, @preconcurrency MTKViewDelegate {
+final class Renderer: NSObject, MTKViewDelegate {
     static let maxParticles = 200_000
     static let shapeVertices = 2048  // keep in sync with kShapeVertices in Shaders.metal
     static let labelShape: [String: Float] = [
