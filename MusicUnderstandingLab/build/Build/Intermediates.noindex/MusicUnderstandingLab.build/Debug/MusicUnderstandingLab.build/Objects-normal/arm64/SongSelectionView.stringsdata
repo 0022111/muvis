@@ -1,0 +1,32 @@
+{
+  "source": "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/SongSelectionView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Music Understanding Lab",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 37
+        }
+      },
+      {
+        "comment": "",
+        "key": "Select a song to analyze",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 41
+        }
+      },
+      {
+        "comment": "",
+        "key": "Select Song…",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 44
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,65 @@
+{
+  "buildCommand" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildOnly"
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "f0db28aa64cb326ac516f3962179a256de94979259cdf04b9d00cad6f1841195"
+    }
+  ],
+  "containerPath" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab.xcodeproj",
+  "continueBuildingAfterErrors" : false,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "hostTargetedPlatform" : null,
+      "platform" : "macosx",
+      "sdk" : "macosx27.0",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "arm64e",
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Products",
+      "derivedDataPath" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build",
+      "indexDataStoreFolderPath" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "commandLine" : {
+        "table" : {
+
+        }
+      },
+      "synthesized" : {
+        "table" : {
+          "ACTION" : "build",
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "YES",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

@@ -1,0 +1,22 @@
+Target dependency graph (10 targets)
+Target 'AllExcludingTests' in project 'Aggregate'
+➜ Explicit dependency on target 'muvis-product' in project 'mudump'
+➜ Explicit dependency on target 'mudump_muvis' in project 'mudump'
+➜ Explicit dependency on target 'mulufs-product' in project 'mudump'
+➜ Explicit dependency on target 'mulabel-product' in project 'mudump'
+➜ Explicit dependency on target 'mudump-product' in project 'mudump'
+➜ Explicit dependency on target 'muvis' in project 'mudump'
+➜ Explicit dependency on target 'mulufs' in project 'mudump'
+➜ Explicit dependency on target 'mulabel' in project 'mudump'
+➜ Explicit dependency on target 'mudump' in project 'mudump'
+Target 'mudump' in project 'mudump' (no dependencies)
+Target 'mulabel' in project 'mudump' (no dependencies)
+Target 'mulufs' in project 'mudump' (no dependencies)
+Target 'muvis' in project 'mudump'
+➜ Explicit dependency on target 'mudump_muvis' in project 'mudump'
+Target 'mudump-product' in project 'mudump' (no dependencies)
+Target 'mulabel-product' in project 'mudump' (no dependencies)
+Target 'mulufs-product' in project 'mudump' (no dependencies)
+Target 'muvis-product' in project 'mudump'
+➜ Explicit dependency on target 'mudump_muvis' in project 'mudump'
+Target 'mudump_muvis' in project 'mudump' (no dependencies)

@@ -1,0 +1,4 @@
+module mudump {
+header "mudump-Swift.h"
+export *
+}

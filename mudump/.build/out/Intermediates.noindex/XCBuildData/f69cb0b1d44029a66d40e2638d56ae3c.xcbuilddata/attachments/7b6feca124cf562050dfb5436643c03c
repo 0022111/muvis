@@ -1,0 +1,4 @@
+module mulufs {
+header "mulufs-Swift.h"
+export *
+}

@@ -1,0 +1,16 @@
+{
+  "" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulive-p.build/Objects-normal/arm64/mulive-primary.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulive-p.build/Objects-normal/arm64/mulive-primary.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulive-p.build/Objects-normal/arm64/mulive-primary.dia",
+    "emit-module-dependencies" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulive-p.build/Objects-normal/arm64/mulive-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulive-p.build/Objects-normal/arm64/mulive-primary-emit-module.dia",
+    "pch" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulive-p.build/Objects-normal/arm64/mulive-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulive-p.build/Objects-normal/arm64/mulive-primary.swiftdeps"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/mudump/Sources/mulive/MULiveApp.swift" : {
+    "index-unit-output-path" : "/mudump.build/Release/mulive-p.build/Objects-normal/arm64/MULiveApp.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulive-p.build/Objects-normal/arm64/MULiveApp.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulive-p.build/Objects-normal/arm64/MULiveApp.o"
+  }
+}

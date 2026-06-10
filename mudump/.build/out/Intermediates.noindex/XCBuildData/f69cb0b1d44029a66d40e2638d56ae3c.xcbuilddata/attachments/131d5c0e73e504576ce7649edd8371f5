@@ -1,0 +1,21 @@
+{
+  "" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/muvis-p.build/Objects-normal/arm64/muvis-primary.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/muvis-p.build/Objects-normal/arm64/muvis-primary.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/muvis-p.build/Objects-normal/arm64/muvis-primary.dia",
+    "emit-module-dependencies" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/muvis-p.build/Objects-normal/arm64/muvis-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/muvis-p.build/Objects-normal/arm64/muvis-primary-emit-module.dia",
+    "pch" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/muvis-p.build/Objects-normal/arm64/muvis-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/muvis-p.build/Objects-normal/arm64/muvis-primary.swiftdeps"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/muvis-p.build/DerivedSources/resource_bundle_accessor.swift" : {
+    "index-unit-output-path" : "/mudump.build/Release/muvis-p.build/Objects-normal/arm64/resource_bundle_accessor.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/muvis-p.build/Objects-normal/arm64/resource_bundle_accessor.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/muvis-p.build/Objects-normal/arm64/resource_bundle_accessor.o"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/mudump/Sources/muvis/MuVisApp.swift" : {
+    "index-unit-output-path" : "/mudump.build/Release/muvis-p.build/Objects-normal/arm64/MuVisApp.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/muvis-p.build/Objects-normal/arm64/MuVisApp.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/muvis-p.build/Objects-normal/arm64/MuVisApp.o"
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "" : {
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/MusicUnderstandingLab-primary.dia",
+    "emit-module-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/MusicUnderstandingLab-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/MusicUnderstandingLab-primary-emit-module.dia",
+    "pch" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/MusicUnderstandingLab-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/MusicUnderstandingLab-primary.swiftdeps"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/App/AssetAnalyzer.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetAnalyzer.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetAnalyzer.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetAnalyzer.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetAnalyzer.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetAnalyzer.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetAnalyzer.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetAnalyzer.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetAnalyzer~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/App/AssetPlayer.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetPlayer.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetPlayer.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetPlayer.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetPlayer.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetPlayer.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetPlayer.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetPlayer.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/AssetPlayer~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/App/SongAnalysisDocument.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongAnalysisDocument.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongAnalysisDocument.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongAnalysisDocument.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongAnalysisDocument.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongAnalysisDocument.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongAnalysisDocument.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongAnalysisDocument.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongAnalysisDocument~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/App/VideoComposer.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoComposer.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoComposer.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoComposer.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoComposer.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoComposer.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoComposer.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoComposer.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoComposer~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Extensions/Instrument+Extensions.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/Instrument+Extensions.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/Instrument+Extensions.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/Instrument+Extensions.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/Instrument+Extensions.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/Instrument+Extensions.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/Instrument+Extensions.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/Instrument+Extensions.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/Instrument+Extensions~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Extensions/KeySignature+Extensions.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeySignature+Extensions.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeySignature+Extensions.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeySignature+Extensions.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeySignature+Extensions.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeySignature+Extensions.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeySignature+Extensions.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeySignature+Extensions.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeySignature+Extensions~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/MusicUnderstandingLab.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/MusicUnderstandingLab.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/MusicUnderstandingLab.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/MusicUnderstandingLab.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/MusicUnderstandingLab.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/MusicUnderstandingLab.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/MusicUnderstandingLab.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/MusicUnderstandingLab.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/MusicUnderstandingLab~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/ContentView.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/InstrumentActivityView.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentActivityView.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentActivityView.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentActivityView.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentActivityView.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentActivityView.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentActivityView.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentActivityView.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentActivityView~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/InstrumentRangesView.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentRangesView.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentRangesView.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentRangesView.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentRangesView.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentRangesView.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentRangesView.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentRangesView.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/InstrumentRangesView~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/KeyView.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeyView.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeyView.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeyView.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeyView.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeyView.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeyView.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeyView.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/KeyView~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/LoudnessView.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/LoudnessView.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/LoudnessView.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/LoudnessView.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/LoudnessView.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/LoudnessView.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/LoudnessView.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/LoudnessView.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/LoudnessView~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/PaceView.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PaceView.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PaceView.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PaceView.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PaceView.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PaceView.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PaceView.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PaceView.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PaceView~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/PlayheadView.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PlayheadView.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PlayheadView.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PlayheadView.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PlayheadView.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PlayheadView.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PlayheadView.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PlayheadView.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/PlayheadView~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/RhythmView.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/RhythmView.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/RhythmView.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/RhythmView.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/RhythmView.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/RhythmView.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/RhythmView.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/RhythmView.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/RhythmView~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/SongSelectionView.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongSelectionView.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongSelectionView.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongSelectionView.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongSelectionView.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongSelectionView.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongSelectionView.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongSelectionView.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/SongSelectionView~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/StructureRoundedBarView.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/StructureRoundedBarView.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/StructureRoundedBarView.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/StructureRoundedBarView.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/StructureRoundedBarView.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/StructureRoundedBarView.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/StructureRoundedBarView.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/StructureRoundedBarView.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/StructureRoundedBarView~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/TileView.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TileView.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TileView.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TileView.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TileView.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TileView.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TileView.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TileView.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TileView~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/TimeSeriesChartView.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TimeSeriesChartView.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TimeSeriesChartView.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TimeSeriesChartView.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TimeSeriesChartView.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TimeSeriesChartView.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TimeSeriesChartView.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TimeSeriesChartView.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TimeSeriesChartView~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/TransportBarView.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TransportBarView.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TransportBarView.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TransportBarView.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TransportBarView.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TransportBarView.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TransportBarView.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TransportBarView.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/TransportBarView~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/VideoView.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoView.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoView.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoView.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoView.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoView.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoView.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoView.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VideoView~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/VisualizationView.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VisualizationView.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VisualizationView.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VisualizationView.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VisualizationView.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VisualizationView.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VisualizationView.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VisualizationView.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/VisualizationView~partial.swiftmodule"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/build/Build/Intermediates.noindex/MusicUnderstandingLab.build/Debug/MusicUnderstandingLab.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

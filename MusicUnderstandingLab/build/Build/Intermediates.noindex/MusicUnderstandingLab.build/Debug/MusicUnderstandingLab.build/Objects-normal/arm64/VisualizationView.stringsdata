@@ -1,0 +1,24 @@
+{
+  "source": "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/VisualizationView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Video",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 163
+        }
+      },
+      {
+        "comment": "",
+        "key": "Export JSON",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 175
+        }
+      }
+    ]
+  },
+  "version": 1
+}

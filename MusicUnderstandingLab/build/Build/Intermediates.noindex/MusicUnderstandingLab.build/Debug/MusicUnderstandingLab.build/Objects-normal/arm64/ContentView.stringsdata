@@ -1,0 +1,24 @@
+{
+  "source": "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Couldn’t Analyze Song",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 62
+        }
+      },
+      {
+        "comment": "",
+        "key": "Choose Another Song",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 66
+        }
+      }
+    ]
+  },
+  "version": 1
+}

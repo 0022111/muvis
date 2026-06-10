@@ -1,0 +1,16 @@
+{
+  "source": "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/LoudnessView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%@: %@",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 51
+        }
+      }
+    ]
+  },
+  "version": 1
+}

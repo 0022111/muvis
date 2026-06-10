@@ -1,0 +1,56 @@
+{
+  "source": "/Users/a0110/AI/MusicUnderstanding/MusicUnderstandingLab/MusicUnderstandingLab/Views/RhythmView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "—",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 69
+        }
+      },
+      {
+        "comment": "",
+        "key": "BPM",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 74
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 69
+        }
+      },
+      {
+        "comment": "",
+        "key": "—",
+        "location": {
+          "startingColumn": 74,
+          "startingLine": 69
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld beats per minute",
+        "location": {
+          "startingColumn": 67,
+          "startingLine": 81
+        }
+      },
+      {
+        "comment": "",
+        "key": "No tempo detected",
+        "location": {
+          "startingColumn": 33,
+          "startingLine": 82
+        }
+      }
+    ]
+  },
+  "version": 1
+}

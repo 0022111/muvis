@@ -1,0 +1,16 @@
+{
+  "" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulufs-p.build/Objects-normal/arm64/mulufs-primary.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulufs-p.build/Objects-normal/arm64/mulufs-primary.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulufs-p.build/Objects-normal/arm64/mulufs-primary.dia",
+    "emit-module-dependencies" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulufs-p.build/Objects-normal/arm64/mulufs-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulufs-p.build/Objects-normal/arm64/mulufs-primary-emit-module.dia",
+    "pch" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulufs-p.build/Objects-normal/arm64/mulufs-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulufs-p.build/Objects-normal/arm64/mulufs-primary.swiftdeps"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/mudump/Sources/mulufs/MULufs.swift" : {
+    "index-unit-output-path" : "/mudump.build/Release/mulufs-p.build/Objects-normal/arm64/MULufs.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulufs-p.build/Objects-normal/arm64/MULufs.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulufs-p.build/Objects-normal/arm64/MULufs.o"
+  }
+}

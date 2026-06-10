@@ -1,0 +1,16 @@
+{
+  "" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mudump-22842FBB69461E-testable-t.build/Objects-normal/arm64/mudump-22842FBB69461E-testable-primary.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mudump-22842FBB69461E-testable-t.build/Objects-normal/arm64/mudump-22842FBB69461E-testable-primary.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mudump-22842FBB69461E-testable-t.build/Objects-normal/arm64/mudump-22842FBB69461E-testable-primary.dia",
+    "emit-module-dependencies" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mudump-22842FBB69461E-testable-t.build/Objects-normal/arm64/mudump-22842FBB69461E-testable-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mudump-22842FBB69461E-testable-t.build/Objects-normal/arm64/mudump-22842FBB69461E-testable-primary-emit-module.dia",
+    "pch" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mudump-22842FBB69461E-testable-t.build/Objects-normal/arm64/mudump-22842FBB69461E-testable-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mudump-22842FBB69461E-testable-t.build/Objects-normal/arm64/mudump-22842FBB69461E-testable-primary.swiftdeps"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/mudump/Sources/mudump/MUDump.swift" : {
+    "index-unit-output-path" : "/mudump.build/Release/mudump-22842FBB69461E-testable-t.build/Objects-normal/arm64/MUDump.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mudump-22842FBB69461E-testable-t.build/Objects-normal/arm64/MUDump.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mudump-22842FBB69461E-testable-t.build/Objects-normal/arm64/MUDump.o"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "" : {
+    "const-values" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulabel-p.build/Objects-normal/arm64/mulabel-primary.swiftconstvalues",
+    "dependencies" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulabel-p.build/Objects-normal/arm64/mulabel-primary.d",
+    "diagnostics" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulabel-p.build/Objects-normal/arm64/mulabel-primary.dia",
+    "emit-module-dependencies" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulabel-p.build/Objects-normal/arm64/mulabel-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulabel-p.build/Objects-normal/arm64/mulabel-primary-emit-module.dia",
+    "pch" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulabel-p.build/Objects-normal/arm64/mulabel-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulabel-p.build/Objects-normal/arm64/mulabel-primary.swiftdeps"
+  },
+  "/Users/a0110/AI/MusicUnderstanding/mudump/Sources/mulabel/MULabel.swift" : {
+    "index-unit-output-path" : "/mudump.build/Release/mulabel-p.build/Objects-normal/arm64/MULabel.o",
+    "llvm-bc" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulabel-p.build/Objects-normal/arm64/MULabel.bc",
+    "object" : "/Users/a0110/AI/MusicUnderstanding/mudump/.build/out/Intermediates.noindex/mudump.build/Release/mulabel-p.build/Objects-normal/arm64/MULabel.o"
+  }
+}

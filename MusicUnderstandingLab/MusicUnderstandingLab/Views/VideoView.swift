@@ -24,7 +24,9 @@ struct VideoView: View {
     @State private var isReady = false
 
     var body: some View {
-        VideoPlayer(player: assetPlayer.player)
+        // VideoPlayer (the AVKit SwiftUI wrapper) aborts in generic metadata
+        // instantiation on macOS 27.0 beta (26A5353q); AVPlayerView is unaffected.
+        PlayerContainerView(player: assetPlayer.player)
             .aspectRatio(Constants.aspectRatio, contentMode: .fill)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .clipped()
@@ -52,3 +54,29 @@ struct VideoView: View {
         }
     }
 }
+
+#if os(macOS)
+private struct PlayerContainerView: NSViewRepresentable {
+    let player: AVPlayer
+
+    func makeNSView(context: Context) -> AVPlayerView {
+        let view = AVPlayerView()
+        view.player = player
+        view.controlsStyle = .inline
+        view.videoGravity = .resizeAspectFill
+        return view
+    }
+
+    func updateNSView(_ view: AVPlayerView, context: Context) {
+        view.player = player
+    }
+}
+#else
+private struct PlayerContainerView: View {
+    let player: AVPlayer
+
+    var body: some View {
+        VideoPlayer(player: player)
+    }
+}
+#endif
