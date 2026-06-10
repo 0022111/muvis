@@ -1,6 +1,5 @@
 import AVFoundation
 import AppKit
-import RealityKit
 import SwiftUI
 
 @main
@@ -69,25 +68,19 @@ final class VisModel {
     var words: [Word] = []
 
     // Tweakables — live, all of them.
-    var symmetry: Double = 6
+    var symmetry: Double = 0
     var bassGain: Double = 1.0
     var drumGain: Double = 1.0
-    var ringCount: Double = 10
+    var particles: Double = 90_000
+    var trail: Double = 0.90
+    var glow: Double = 1.3
+    var flow: Double = 0.5
     var hueShift: Double = 0
     var spin: Double = 1.0
     var showLyrics = true
     var lyricSize: Double = 1.0
     var isPlaying = false
 
-    // Scene plumbing.
-    var root = Entity()
-    var center = ModelEntity()
-    var ring: [ModelEntity] = []
-    var outer: [ModelEntity] = []
-    private var angle: Float = 0
-    private var lastTick: Date?
-
-    static let maxRing = 16
     static let labelHue: [String: Double] = [
         "intro": 0.58, "verse": 0.50, "buildup": 0.10, "drop": 0.98,
         "breakdown": 0.45, "bridge": 0.75, "outro": 0.62,
@@ -191,82 +184,6 @@ final class VisModel {
         player.seek(to: CMTime(seconds: t, preferredTimescale: 600),
                     toleranceBefore: .zero, toleranceAfter: .zero)
     }
-
-    // MARK: Scene
-
-    func buildScene(_ content: inout some RealityViewContentProtocol) {
-        let camera = PerspectiveCamera()
-        camera.position = [0, 0, 4.2]
-        content.add(camera)
-
-        center = ModelEntity(mesh: .generateSphere(radius: 0.34),
-                             materials: [UnlitMaterial(color: .white)])
-        root.addChild(center)
-
-        ring = (0..<Self.maxRing).map { _ in
-            let e = ModelEntity(mesh: .generateBox(size: 0.22, cornerRadius: 0.04),
-                                materials: [UnlitMaterial(color: .white)])
-            root.addChild(e)
-            return e
-        }
-        outer = (0..<Self.maxRing).map { _ in
-            let e = ModelEntity(mesh: .generateSphere(radius: 0.06),
-                                materials: [UnlitMaterial(color: .white)])
-            root.addChild(e)
-            return e
-        }
-        content.add(root)
-    }
-
-    /// Per-frame scene update, driven by RealityKit's update event.
-    func tick() {
-        let now = Date()
-        let dt = Float(min(0.1, now.timeIntervalSince(lastTick ?? now)))
-        lastTick = now
-
-        let t = time
-        let bassV = min(1.5, bass.sample(at: t) * bassGain)
-        let drumV = min(1.5, drum.sample(at: t) * drumGain)
-        let paceV = pace.sample(at: t)
-        let pulse = boundaryPulse(at: t)
-        let section = currentSection(at: t)
-        let baseHue = (Self.labelHue[section?.label ?? ""] ?? 0.6) + hueShift
-        let hype = Double(section?.hype ?? 5) / 10
-
-        angle += dt * Float(spin) * (0.25 + Float(paceV) * 2.2)
-        root.orientation = simd_quatf(angle: angle * 0.25, axis: [0, 0, 1])
-
-        center.scale = .one * Float(0.65 + bassV * 0.85 + pulse * 0.3)
-        center.model?.materials = [UnlitMaterial(color: color(hue: baseHue, brightness: 0.55 + bassV * 0.45))]
-
-        let n = max(2, Int(ringCount))
-        let radius = Float(1.25 + pulse * 0.55 + bassV * 0.12)
-        for (k, e) in ring.enumerated() {
-            guard k < n else { e.isEnabled = false; continue }
-            e.isEnabled = true
-            let a = Float(k) / Float(n) * .pi * 2 + angle
-            e.position = [cos(a) * radius, sin(a) * radius, 0]
-            e.orientation = simd_quatf(angle: a + angle * 2, axis: [0, 0, 1])
-            e.scale = .one * Float(0.55 + drumV * 0.9)
-            e.model?.materials = [UnlitMaterial(color: color(hue: baseHue + 0.08, brightness: 0.35 + drumV * 0.65))]
-        }
-        let outerRadius = radius + 0.65 + Float(drumV) * 0.25
-        for (k, e) in outer.enumerated() {
-            guard k < n else { e.isEnabled = false; continue }
-            e.isEnabled = true
-            let a = Float(k) / Float(n) * .pi * 2 - angle * 1.6
-            e.position = [cos(a) * outerRadius, sin(a) * outerRadius, -0.3]
-            e.scale = .one * Float(0.5 + paceV * 1.2 + hype * 0.5)
-            e.model?.materials = [UnlitMaterial(color: color(hue: baseHue - 0.1, brightness: 0.3 + paceV * 0.7))]
-        }
-    }
-
-    private func color(hue: Double, brightness: Double) -> NSColor {
-        NSColor(hue: hue.truncatingRemainder(dividingBy: 1),
-                saturation: 0.85,
-                brightness: min(1, brightness),
-                alpha: 1)
-    }
 }
 
 // MARK: - Views
@@ -309,14 +226,8 @@ struct ContentView: View {
 
     func visual(t: Double) -> some View {
         ZStack {
-            RealityView { content in
-                var content = content
-                model.buildScene(&content)
-                _ = content.subscribe(to: SceneEvents.Update.self) { _ in
-                    Task { @MainActor in model.tick() }
-                }
-            }
-            .background(.black)
+            MetalVisualView(model: model)
+                .background(.black)
 
             if model.showLyrics {
                 let line = model.activeWords(at: t)
@@ -324,6 +235,8 @@ struct ContentView: View {
                     Text(line)
                         .font(.system(size: 40 * model.lyricSize, weight: .heavy, design: .rounded))
                         .foregroundStyle(.white)
+                        .shadow(color: .white.opacity(0.8), radius: 3)
+                        .shadow(color: .cyan.opacity(0.6), radius: 22)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 40)
                         .scaleEffect(1 + model.vocal.sample(at: t) * 0.15)
@@ -383,10 +296,13 @@ struct ControlPanel: View {
             }
 
             Divider()
-            slider("Symmetry", $model.symmetry, 0...12, step: 1)
+            slider("Symmetry", $model.symmetry, 0...12, step: 1, spec: "%.0f")
             slider("Bass gain", $model.bassGain, 0...3)
             slider("Drum gain", $model.drumGain, 0...3)
-            slider("Shapes", $model.ringCount, 2...Double(VisModel.maxRing), step: 1)
+            slider("Particles", $model.particles, 10_000...200_000, step: 10_000, spec: "%.0f")
+            slider("Trails", $model.trail, 0.80...0.99)
+            slider("Glow", $model.glow, 0.4...3)
+            slider("Flow", $model.flow, 0...1)
             slider("Hue shift", $model.hueShift, 0...1)
             slider("Spin", $model.spin, 0...3)
             Divider()
@@ -398,9 +314,9 @@ struct ControlPanel: View {
     }
 
     func slider(_ label: String, _ value: Binding<Double>, _ range: ClosedRange<Double>,
-                step: Double? = nil) -> some View {
+                step: Double? = nil, spec: String = "%.2f") -> some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text("\(label): \(value.wrappedValue, specifier: "%.2f")").font(.caption)
+            Text("\(label): \(String(format: spec, value.wrappedValue))").font(.caption)
             if let step {
                 Slider(value: value, in: range, step: step)
             } else {
