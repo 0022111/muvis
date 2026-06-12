@@ -11,6 +11,9 @@ struct Uniforms {
     float4 params;  // x dt, y point scale, z energy, w aspect
     float4 post;    // x kaleido segments, y trail decay, z feedback zoom, w feedback twist
     float4 post2;   // x exposure, y vignette, z aberration, w brightness scale
+    float4 rhythm;  // x beat pulse, y bar pulse, z beat phase, w bpm norm
+    float4 energy;  // x loudness, y punch, z phrase pulse, w EDR headroom
+    float4 extra;   // x shape scale, y shape hue offset, z shape brightness, w minor-key flag
 };
 
 struct Particle {
@@ -105,7 +108,8 @@ static float3 heroPoint(float t, constant Uniforms& u) {
     float m = smoothstep(0.0, 1.0, u.morph.z);
     float3 p = mix(shapePoint(t, u.morph.x, time), shapePoint(t, u.morph.y, time), m);
     p *= 1.0 + 0.05 * sin(time * 0.8 + t * TAU * 3.0);  // slow breathing
-    p *= 1.0 + u.audio.x * 0.22 + u.pulse.x * 0.35;     // bass swell, boundary kick
+    p *= 1.0 + u.audio.x * 0.22 + u.pulse.x * 0.35      // bass swell, boundary kick
+             + u.rhythm.x * 0.05 + u.energy.z * 0.12;   // beat tick, phrase shimmer
     return p;
 }
 
@@ -129,11 +133,14 @@ kernel void simulate(device Particle* particles [[buffer(0)]],
     // Spring toward a home point on the hero curve; turbulence pulls away.
     float3 home = heroPoint(fract(seed), u);
     vel += (home - pos) * (2.6 + vocal * 4.0) * dt;
-    vel += flow(pos * (0.55 + pace * 0.5), t) * (0.6 + bass * 2.4 + drum * 1.4) * u.params.z * dt;
+    vel += flow(pos * (0.55 + pace * 0.5), t)
+         * (0.6 + bass * 2.4 + drum * 1.4) * (0.5 + u.energy.x * 0.8) * u.params.z * dt;
 
-    // Drum hits shove radially; section boundaries detonate.
+    // Drum hits shove radially; section boundaries detonate; bars swirl.
     float3 radial = normalize(pos + float3(1e-4, 2e-4, 3e-4));
     vel += radial * (drum * drum * 2.4 + boom * 6.0) * dt;
+    float3 tangent = normalize(cross(radial, float3(0.0, 1.0, 0.0)) + float3(0.0, 1e-4, 0.0));
+    vel += tangent * u.rhythm.y * 3.0 * dt;
 
     vel *= exp(-dt * 2.6);
     pos += vel * dt;
@@ -164,11 +171,13 @@ vertex GlowVertex shapeVert(uint vid [[vertex_id]],
 {
     float t = float(vid) / float(kShapeVertices - 1);
     GlowVertex o;
-    o.position = u.viewProj * float4(heroPoint(t, u), 1.0);
+    o.position = u.viewProj * float4(heroPoint(t, u) * u.extra.x, 1.0);
     o.size = 1.0;
-    float hue = u.pulse.z + t * 0.10;
-    float bright = (0.10 + u.audio.y * 0.16 + u.pulse.x * 0.22) * u.post2.w;
-    o.color = half4(half3(hsv2rgb(float3(hue, 0.65, 1.0)) * bright), 1.0h);
+    float hue = u.pulse.z + u.extra.y + t * 0.10;
+    float sat = 0.62 + u.extra.w * 0.12;  // minor keys read moodier
+    float bright = (0.10 + u.audio.y * 0.14 + u.pulse.x * 0.20 + u.rhythm.x * 0.12)
+                 * (0.35 + u.energy.x * 0.9) * u.extra.z * u.post2.w;
+    o.color = half4(half3(hsv2rgb(float3(hue, sat, 1.0)) * bright), 1.0h);
     return o;
 }
 
@@ -186,10 +195,12 @@ vertex GlowVertex particleVert(uint vid [[vertex_id]],
     float fade = smoothstep(0.0, 0.18, p.posLife.w);
     GlowVertex o;
     o.position = clip;
-    o.size = clamp(u.params.y * (2.2 + speed * 1.6 + u.audio.y * 3.0) / max(clip.w, 0.25), 1.0, 28.0);
+    o.size = clamp(u.params.y * (2.2 + speed * 1.6 + u.audio.y * 3.0)
+                   * (1.0 + u.rhythm.x * 0.3) / max(clip.w, 0.25), 1.0, 28.0);
     float hue = u.pulse.z + fract(p.velSeed.w * 7.0) * 0.14 + speed * 0.04;
-    float sat = clamp(0.85 - u.audio.x * 0.25 - speed * 0.06, 0.2, 1.0);
-    float bright = (0.20 + speed * 0.40 + u.audio.y * 0.45) * fade * u.post2.w;
+    float sat = clamp(0.85 - u.audio.x * 0.25 - speed * 0.06 + u.extra.w * 0.08, 0.2, 1.0);
+    float bright = (0.20 + speed * 0.40 + u.audio.y * 0.45)
+                 * (0.30 + u.energy.x * 0.9) * fade * u.post2.w;
     o.color = half4(half3(hsv2rgb(float3(hue, sat, 1.0)) * bright), 1.0h);
     return o;
 }
@@ -274,7 +285,7 @@ fragment half4 postFrag(ScreenVertex in [[stage_in]],
 
     float2 suv = float2(c.x / u.params.w, c.y) + 0.5;
     float2 dir = suv - 0.5;
-    float ab = u.post2.z * (0.0015 + u.audio.x * 0.005);
+    float ab = u.post2.z * (0.0015 + u.audio.x * 0.004 + u.energy.y * 0.010);
     float3 col;
     col.r = float(accum.sample(smp, suv + dir * ab).r);
     col.g = float(accum.sample(smp, suv).g);
@@ -288,10 +299,15 @@ fragment half4 postFrag(ScreenVertex in [[stage_in]],
     glow += float3(accum.sample(smp, suv - float2(0.0, g)).rgb);
     col += glow * 0.16;
 
-    col += cppn(c * 2.3, u.pulse.w * 0.05, u.pulse.z)
-         * (0.04 + u.audio.x * 0.05 + u.pulse.x * 0.10);
+    col += cppn(c * 2.3, u.pulse.w * 0.05, u.pulse.z + u.extra.w * 0.07)
+         * (0.03 + u.audio.x * 0.04 + u.pulse.x * 0.08) * (0.4 + u.energy.x);
 
-    col = 1.0 - exp(-col * u.post2.x);
-    col *= max(1.0 - u.post2.y * dot(c, c) * 1.5, 0.0);
-    return half4(half3(col), 1.0h);
+    // Tonemap to an SDR look, linearize for the extended-linear colorspace,
+    // then push the hottest highlights into the display's EDR headroom.
+    float3 sdr = 1.0 - exp(-col * u.post2.x);
+    sdr *= max(1.0 - u.post2.y * dot(c, c) * 1.5, 0.0);
+    float3 lin = pow(sdr, float3(2.2));
+    float hot = smoothstep(0.55, 1.0, max3(sdr.r, sdr.g, sdr.b));
+    lin *= mix(1.0, u.energy.w, hot * hot);
+    return half4(half3(lin), 1.0h);
 }

@@ -50,6 +50,19 @@ struct Word {
     let text: String
 }
 
+struct KeyRange {
+    let start: Double
+    let end: Double
+    let hue: Double
+    let minor: Bool
+    let name: String
+}
+
+struct Peak {
+    let time: Double
+    let probability: Double
+}
+
 // MARK: - Model
 
 @Observable @MainActor
@@ -62,9 +75,19 @@ final class VisModel {
     var bass = Series()
     var drum = Series()
     var vocal = Series()
+    var other = Series()
     var pace = Series()
+    var loudMomentary = Series()
+    var loudShortTerm = Series()
+    var integratedLUFS: Double = -14
+    var beats: [Double] = []
+    var bars: [Double] = []
+    var bpm: Double = 0
+    var keys: [KeyRange] = []
     var sections: [SongSection] = []
     var boundaries: [Double] = []
+    var segmentPeaks: [Peak] = []
+    var phrasePeaks: [Peak] = []
     var words: [Word] = []
 
     // Tweakables — live, all of them.
@@ -106,6 +129,29 @@ final class VisModel {
             .map(\.text).joined(separator: " ")
     }
 
+    func currentKey(at t: Double) -> KeyRange? {
+        keys.first { t >= $0.start && t < $0.end } ?? keys.last
+    }
+
+    /// Most recent event at or before `t`, plus its successor (binary search).
+    func neighbors(in events: [Double], at t: Double) -> (last: Double, next: Double)? {
+        guard let first = events.first, t >= first else { return nil }
+        var lo = 0, hi = events.count - 1
+        while lo < hi {
+            let mid = (lo + hi + 1) / 2
+            if events[mid] <= t { lo = mid } else { hi = mid - 1 }
+        }
+        let next = lo + 1 < events.count ? events[lo + 1] : events[lo] + 60 / max(bpm, 30)
+        return (events[lo], next)
+    }
+
+    /// Exponentially decaying pulse from the most recent boundary peak,
+    /// scaled by the model's confidence in that boundary.
+    func peakPulse(_ peaks: [Peak], at t: Double, rate: Double) -> Double {
+        guard let p = peaks.last(where: { $0.time <= t }) else { return 0 }
+        return p.probability * exp(-(t - p.time) * rate)
+    }
+
     func load(url: URL) {
         let audioExtensions = ["aif", "aiff", "wav", "mp3", "m4a", "flac", "caf", "aac"]
         var audioURL = url
@@ -128,6 +174,7 @@ final class VisModel {
         bass = Series(json: activity?["bass"]) ?? Series()
         drum = Series(json: activity?["drum"]) ?? Series()
         vocal = Series(json: activity?["vocal"]) ?? Series()
+        other = Series(json: activity?["other"]) ?? Series()
 
         if let dp = dump["decodedPredictions"] as? [String: Any],
            let pc = dp["paceCurve"] as? [String: Any],
@@ -151,6 +198,41 @@ final class VisModel {
             boundaries = peaks.compactMap { $0["time"] }.sorted()
         } else {
             boundaries = sections.map(\.start)
+        }
+
+        let dp = dump["decodedPredictions"] as? [String: Any]
+        segmentPeaks = Self.parsePeaks(dp?["segments"])
+        phrasePeaks = Self.parsePeaks(dp?["phrases"])
+        if phrasePeaks.isEmpty,
+           let phrases = (dump["structure"] as? [String: Any])?["phrases"] as? [[String: Any]] {
+            phrasePeaks = phrases.compactMap { p in
+                (p["start"] as? Double).map { Peak(time: $0, probability: 0.5) }
+            }
+        }
+
+        if let rhythm = dump["rhythm"] as? [String: Any] {
+            beats = (rhythm["beats"] as? [Double]) ?? []
+            bars = (rhythm["bars"] as? [Double]) ?? []
+            bpm = (rhythm["beatsPerMinute"] as? NSNumber)?.doubleValue ?? 0
+        }
+
+        if let loud = dump["loudness"] as? [String: Any] {
+            loudMomentary = Series(json: loud["momentary"]) ?? Series()
+            loudShortTerm = Series(json: loud["shortTerm"]) ?? Series()
+            integratedLUFS = (loud["integratedLUFS"] as? NSNumber)?.doubleValue ?? -14
+        }
+
+        keys = (dump["key"] as? [[String: Any]] ?? []).compactMap { k in
+            guard let start = k["start"] as? Double,
+                  let end = k["end"] as? Double,
+                  let tonic = k["tonic"] as? String,
+                  let pc = Self.pitchClass(tonic) else { return nil }
+            let minor = (k["mode"] as? String) == "minor"
+            // Circle of fifths laid around the color wheel: related keys get
+            // related hues, so a key change is a palette modulation.
+            let hue = Double((pc * 7) % 12) / 12
+            return KeyRange(start: start, end: end, hue: hue, minor: minor,
+                            name: Self.tonicName(tonic) + (minor ? " minor" : " major"))
         }
 
         words = (dump["transcript"] as? [[String: Any]] ?? []).compactMap { w in
@@ -183,6 +265,42 @@ final class VisModel {
     func seek(to t: Double) {
         player.seek(to: CMTime(seconds: t, preferredTimescale: 600),
                     toleranceBefore: .zero, toleranceAfter: .zero)
+    }
+
+    // MARK: Dump parsing helpers
+
+    private static func parsePeaks(_ any: Any?) -> [Peak] {
+        (((any as? [String: Any])?["boundaryPeaks"] as? [[String: Double]]) ?? [])
+            .compactMap { p in
+                p["time"].map { Peak(time: $0, probability: p["probability"] ?? 1) }
+            }
+    }
+
+    /// Pitch class for a KeyResult.Tonic raw value ("d", "aFlat", "cSharp", …).
+    private static func pitchClass(_ tonic: String) -> Int? {
+        var name = tonic.lowercased()
+            .replacingOccurrences(of: "♭", with: "flat")
+            .replacingOccurrences(of: "♯", with: "sharp")
+            .replacingOccurrences(of: "#", with: "sharp")
+        if name.count == 2, name.hasSuffix("b") { name = String(name.first!) + "flat" }
+        let map: [String: Int] = [
+            "c": 0, "csharp": 1, "dflat": 1, "d": 2, "dsharp": 3, "eflat": 3,
+            "e": 4, "f": 5, "fsharp": 6, "gflat": 6, "g": 7, "gsharp": 8,
+            "aflat": 8, "a": 9, "asharp": 10, "bflat": 10, "b": 11,
+        ]
+        return map[name]
+    }
+
+    private static func tonicName(_ tonic: String) -> String {
+        var name = tonic
+        guard let letter = name.first else { return tonic }
+        name = String(letter).uppercased() + name.dropFirst()
+        return name
+            .replacingOccurrences(of: "Flat", with: "♭")
+            .replacingOccurrences(of: "Sharp", with: "♯")
+            .replacingOccurrences(of: "flat", with: "♭")
+            .replacingOccurrences(of: "sharp", with: "♯")
+            .replacingOccurrences(of: "#", with: "♯")
     }
 }
 
@@ -285,6 +403,13 @@ struct ControlPanel: View {
                 Text("\(s.label.isEmpty ? "section" : s.label)  ·  hype \(s.hype)/10")
                     .font(.subheadline.bold())
                     .foregroundStyle(.secondary)
+            }
+            let info = [
+                model.currentKey(at: t)?.name,
+                model.bpm > 0 ? "\(Int(model.bpm.rounded())) BPM" : nil,
+            ].compactMap { $0 }.joined(separator: "  ·  ")
+            if !info.isEmpty {
+                Text(info).font(.caption).foregroundStyle(.secondary)
             }
 
             Slider(value: Binding(

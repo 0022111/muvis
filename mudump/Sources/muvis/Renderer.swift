@@ -13,6 +13,9 @@ struct VisUniforms {
     var params = SIMD4<Float>(repeating: 0)  // dt, point scale, energy, aspect
     var post = SIMD4<Float>(repeating: 0)    // kaleido segments, trail decay, feedback zoom, feedback twist
     var post2 = SIMD4<Float>(repeating: 0)   // exposure, vignette, aberration, brightness scale
+    var rhythm = SIMD4<Float>(repeating: 0)  // beat pulse, bar pulse, beat phase, bpm norm
+    var energy = SIMD4<Float>(repeating: 0)  // loudness, punch, phrase pulse, EDR headroom
+    var extra = SIMD4<Float>(repeating: 0)   // shape scale, shape hue offset, shape brightness, minor-key flag
 }
 
 struct VisParticle {
@@ -29,7 +32,11 @@ struct MetalVisualView: NSViewRepresentable {
 
     func makeNSView(context: Context) -> MTKView {
         let view = MTKView(frame: .zero, device: context.coordinator.device)
-        view.colorPixelFormat = .bgra8Unorm
+        // True EDR output: float drawable in extended linear Display P3, so
+        // highlights can exceed 1.0 and light up XDR panels past UI white.
+        view.colorPixelFormat = .rgba16Float
+        view.colorspace = CGColorSpace(name: CGColorSpace.extendedLinearDisplayP3)
+        (view.layer as? CAMetalLayer)?.wantsExtendedDynamicRangeContent = true
         view.clearColor = MTLClearColor(red: 0, green: 0, blue: 0, alpha: 1)
         view.preferredFramesPerSecond = 120
         view.delegate = context.coordinator
@@ -74,6 +81,7 @@ final class Renderer: NSObject, @preconcurrency MTKViewDelegate {
     private var shapeFrom: Float = 0
     private var shapeTo: Float = 0
     private var morphStart: Float = 0
+    private var haloExtra = SIMD4<Float>(1.5, 0.38, 0.3, 0)
 
     init(model: VisModel) {
         self.model = model
@@ -113,7 +121,7 @@ final class Renderer: NSObject, @preconcurrency MTKViewDelegate {
             feedback = try render("screenVert", "feedbackFrag", format: .rgba16Float, additive: false)
             shape = try render("shapeVert", "lineFrag", format: .rgba16Float, additive: true)
             points = try render("particleVert", "particleFrag", format: .rgba16Float, additive: true)
-            post = try render("screenVert", "postFrag", format: .bgra8Unorm, additive: false)
+            post = try render("screenVert", "postFrag", format: .rgba16Float, additive: false)
         } catch {
             fatalError("muvis pipeline setup failed: \(error)")
         }
@@ -153,8 +161,10 @@ final class Renderer: NSObject, @preconcurrency MTKViewDelegate {
               let drawableRPD = view.currentRenderPassDescriptor,
               let cmd = queue.makeCommandBuffer() else { return }
 
+        let headroom = Float(view.window?.screen?.maximumExtendedDynamicRangeColorComponentValue ?? 1)
         var u = makeUniforms(aspect: Float(size.width / size.height),
-                             pointScale: Float(size.height) / 540)
+                             pointScale: Float(size.height) / 540,
+                             headroom: max(1, headroom))
         let uniformLength = MemoryLayout<VisUniforms>.stride
 
         if accumNeedsClear {
@@ -188,6 +198,13 @@ final class Renderer: NSObject, @preconcurrency MTKViewDelegate {
             enc.setVertexBytes(&u, length: uniformLength, index: 1)
             enc.drawPrimitives(type: .lineStrip, vertexStart: 0, vertexCount: Self.shapeVertices)
 
+            // Halo: the same curve expanded and recolored, riding the "other"
+            // (melodic/harmonic) stem.
+            var halo = u
+            halo.extra = haloExtra
+            enc.setVertexBytes(&halo, length: uniformLength, index: 1)
+            enc.drawPrimitives(type: .lineStrip, vertexStart: 0, vertexCount: Self.shapeVertices)
+
             enc.setRenderPipelineState(points)
             enc.setVertexBuffer(particles, offset: 0, index: 0)
             enc.setVertexBytes(&u, length: uniformLength, index: 1)
@@ -211,7 +228,7 @@ final class Renderer: NSObject, @preconcurrency MTKViewDelegate {
 
     // MARK: Frame state
 
-    private func makeUniforms(aspect: Float, pointScale: Float) -> VisUniforms {
+    private func makeUniforms(aspect: Float, pointScale: Float, headroom: Float) -> VisUniforms {
         let now = Date()
         let dt = Float(now.timeIntervalSince(lastFrame ?? now.addingTimeInterval(-1.0 / 120)))
             .clamped(to: 0...(1.0 / 24))
@@ -226,11 +243,44 @@ final class Renderer: NSObject, @preconcurrency MTKViewDelegate {
         lastDrum = drumRaw
         let drum = min(1.5, drumRaw * 0.8 + kickEnv * 0.6)
         let vocal = Float(min(1.5, model.vocal.sample(at: t)))
+        let other = Float(min(1.5, model.other.sample(at: t)))
         let pace = Float(model.pace.sample(at: t))
         let pulse = Float(model.boundaryPulse(at: t))
         let section = model.currentSection(at: t)
         let hype = Float(section?.hype ?? 5) / 10
-        let hue = Float((VisModel.labelHue[section?.label ?? ""] ?? 0.6) + model.hueShift)
+
+        // Rhythm clocks: decaying envelopes from the last beat and bar.
+        var beatPulse: Float = 0, barPulse: Float = 0, beatPhase: Float = 0
+        if let (last, next) = model.neighbors(in: model.beats, at: t) {
+            beatPulse = Float(exp(-(t - last) * 9))
+            beatPhase = Float(min(1, max(0, (t - last) / max(0.05, next - last))))
+        }
+        if let (last, _) = model.neighbors(in: model.bars, at: t) {
+            barPulse = Float(exp(-(t - last) * 5))
+        }
+        let bpmNorm = Float(min(1.5, model.bpm / 140))
+
+        // Loudness relative to the song's integrated LUFS gates the whole
+        // scene's energy; momentary minus short-term is the transient punch.
+        let hasLoudness = !model.loudMomentary.values.isEmpty
+        let momentary = model.loudMomentary.sample(at: t)
+        let loud: Float = hasLoudness
+            ? Float(max(0, min(1.25, (momentary - model.integratedLUFS + 10) / 14)))
+            : 0.8
+        let punch: Float = hasLoudness && !model.loudShortTerm.values.isEmpty
+            ? Float(max(0, min(1, (momentary - model.loudShortTerm.sample(at: t)) / 5)))
+            : 0
+
+        // Finer structure levels shimmer; sections stay the big detonations.
+        let phrasePulse = Float(model.peakPulse(model.phrasePeaks, at: t, rate: 7) * 0.6
+                              + model.peakPulse(model.segmentPeaks, at: t, rate: 5))
+
+        // Palette: the song's key, mapped around the circle of fifths, is the
+        // base hue; section labels offset around it; minor keys flag moodier.
+        let key = model.currentKey(at: t)
+        let sectionOffset = ((VisModel.labelHue[section?.label ?? ""] ?? 0.6) - 0.5) * 0.35
+        let hue = Float((key?.hue ?? 0.61) + sectionOffset + model.hueShift)
+        let minorFlag: Float = key?.minor == true ? 1 : 0
 
         // Morph the hero shape on section changes; idle-cycle when no song.
         let label = (section?.label).flatMap { $0.isEmpty ? nil : $0 } ?? "auto\(Int(wall / 12) % 6)"
@@ -248,13 +298,14 @@ final class Renderer: NSObject, @preconcurrency MTKViewDelegate {
         }
         let morphMix = min(1, (wall - morphStart) / 1.6)
 
-        spinAngle += dt * Float(model.spin) * (0.25 + pace * 2.0)
+        spinAngle += dt * Float(model.spin) * (0.25 + pace * 1.6 + bpmNorm * 0.6)
 
-        // Orbiting camera: hype pulls in, the orbit drifts and bobs.
+        // Orbiting camera: hype pulls in, bars dolly-kick, transients shake.
         let az = spinAngle * 0.3 + wall * 0.02
         let el = 0.35 + sin(wall * 0.11) * 0.35
-        let dist = max(2.6, 5.0 - hype * 1.3 - smoothBass * 0.3)
-        let eye = SIMD3<Float>(cos(az) * cos(el), sin(el), sin(az) * cos(el)) * dist
+        let dist = max(2.6, 5.0 - hype * 1.3 - smoothBass * 0.3 - barPulse * 0.18)
+        var eye = SIMD3<Float>(cos(az) * cos(el), sin(el), sin(az) * cos(el)) * dist
+        eye += SIMD3(sin(wall * 53), sin(wall * 47), sin(wall * 61)) * punch * 0.04
         let viewMatrix = lookAt(eye: eye, center: .zero, up: [0, 1, 0])
         let projMatrix = perspective(fovY: .pi / 3, aspect: aspect, near: 0.05, far: 100)
 
@@ -266,11 +317,16 @@ final class Renderer: NSObject, @preconcurrency MTKViewDelegate {
         u.params = SIMD4(dt, pointScale, 0.7 + hype * 1.6, aspect)
         u.post = SIMD4(Float(model.symmetry),
                        Float(model.trail),
-                       1.0 - Float(model.flow) * (0.006 + smoothBass * 0.012) - pulse * 0.008,
-                       dt * Float(model.spin) * (0.05 + pace * 0.25))
+                       1.0 - Float(model.flow) * (0.006 + smoothBass * 0.012)
+                           - pulse * 0.008 - barPulse * 0.004,
+                       dt * (Float(model.spin) * (0.05 + pace * 0.25) + barPulse * 0.5))
         // Brightness scale normalizes the trail buffer's steady-state gain so
         // longer trails don't blow out: gain ≈ 1 / (1 - decay).
         u.post2 = SIMD4(Float(model.glow), 0.6, 1.0, Float((1 - model.trail) * 10))
+        u.rhythm = SIMD4(beatPulse, barPulse, beatPhase, bpmNorm)
+        u.energy = SIMD4(loud, punch, phrasePulse, headroom)
+        u.extra = SIMD4(1, 0, 1, minorFlag)
+        haloExtra = SIMD4(1.5 + other * 0.6, 0.38, 0.30 + other * 0.7, minorFlag)
         return u
     }
 
